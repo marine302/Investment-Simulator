@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investment Simulator</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap" rel="stylesheet">
+  <style>
+    .banner-ad {
+      text-align: center; /* 텍스트 중앙 정렬 */
+      margin-bottom: 20px; /* 배너 아래 여백 추가 */
+    }
+
+    .banner-ad img {
+      max-width: 375px; /* 이미지 최대 너비 설정 
+      border: 2px solid #ccc; /* 테두리 추가 */
+      border-radius: 5px; /* 테두리 모서리를 둥글게 */
+    }
+
+    h2 {
+      text-align: center; /* 제목 가운데 정렬 */
+      margin-top: 20px; /* 제목 위 여백 추가 */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="banner-ad">
+      <a href="https://portal.gmc-labs.com/">
+        <img src="dantaro_logo_new.png" alt="Banner Ad">
+      </a>
+    </div>
+    <h2>Investment Simulator</h2>
+    <div class="input-container">
+        <div class="input-group">
+            <label for="coinName">코인명:</label>
+            <select id="coinName" name="coinName" style="width: 100%;">
+                <option value="KRW-ADA">KRW-ADA</option>
+            </select>
+            <span class="unit">  </span>
+        </div>
+        <div class="input-group">
+            <label for="currentPrice">코인 시세:</label>
+            <input type="text" id="currentPrice" name="currentPrice" readonly>
+            <span class="unit">원</span>
+        </div>
+        <div class="input-group">
+            <label for="splits">분할횟수:</label>
+            <input type="text" id="splits" name="splits" value="6" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+            <span class="unit">회</span>
+        </div>
+        <div class="input-group">
+            <label for="interval">전체간격:</label>
+            <input type="text" id="interval" name="interval" value="30" oninput="this.value = this.value.replace(/[^0-9]/g, ''); calculateDecayRate()">
+            <span class="unit">%</span>
+        </div>
+        <div class="input-group">
+            <label for="decayRate">감소율:</label>
+            <input type="text" id="decayRate" name="decayRate" readonly>
+            <span class="unit">%</span>
+        </div>
+        <div class="input-group">
+            <label for="amountRatio">금액비중:</label>
+            <input type="text" id="amountRatio" name="amountRatio" value="1.5" oninput="this.value = this.value.replace(/[^0-9.]/g, '')">
+            <span class="unit">배</span>
+        </div>
+        <div class="input-group">
+            <label for="stopLoss">손절간격:</label>
+            <input type="text" id="stopLoss" name="stopLoss" value="10" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+            <span class="unit">%</span>
+        </div>
+        <div class="input-group">
+            <label for="takeProfit">익절간격:</label>
+            <input type="text" id="takeProfit" name="takeProfit" value="2.5" oninput="this.value = this.value.replace(/[^0-9.]/g, '')">
+            <span class="unit">%</span>
+        </div>
+        <div class="input-group">
+            <label for="takeProfitIncrease">익절값증가:</label>
+            <input type="text" id="takeProfitIncrease" name="takeProfitIncrease" value="0.5" oninput="this.value = this.value.replace(/[^0-9.]/g, '')">
+            <span class="unit">%</span>
+        </div>
+        <div class="input-group">
+            <label for="margin">마진:</label>
+            <input type="text" id="margin" name="margin" value="250,000" oninput="this.value = numberWithCommas(this.value.replace(/[^0-9]/g, ''))">
+            <span class="unit">원</span>
+        </div>
+        <div class="input-group">
+            <label for="leverage">레버리지:</label>
+            <input type="text" id="leverage" name="leverage" value="20" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+            <span class="unit">배</span>
+        </div>
+        <button onclick="calculate()">계산하기</button>
+    </div>
+    <table id="resultsTable">
+        <thead>
+        <tr>
+            <th>주문</th>
+            <th>주문가격</th>
+            <th>주문간격(%)</th>
+            <th>주문금액</th>
+            <th>주문수량</th>
+            <th>주문누적금액</th>
+            <th>주문누적수량</th>
+            <th>평균매수가</th>
+            <th>평단가변동율(%)</th>
+            <th>익절가격</th>
+            <th>익절간격(%)</th>
+            <th>하락반등폭</th>
+            <th>수익금액</th>
+            <th>수익률(%)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- 결과가 여기에 동적으로 삽입됩니다 -->
+        </tbody>
+    </table>
+</div>
+<script src="script.js"></script>
+</body>
+<footer>
+  <p>Powered by Daniel</p>
+</footer>
+
+</html>

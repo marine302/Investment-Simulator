@@ -1,0 +1,112 @@
+/* 전체 body 스타일 */
+body { 
+  font-family: Arial, sans-serif; /* 폰트 패밀리 설정 */
+  background-color: #f7f7f7; /* 배경색 설정 */
+  margin: 0; /* 바깥쪽 여백 제거 */
+  padding: 0; /* 안쪽 여백 제거 */
+}
+
+/* 컨테이너 스타일 */
+.container { 
+  max-width: 1280px; /* 최대 너비 설정 */
+  margin: auto; /* 가운데 정렬 */
+  padding: 20px; /* 안쪽 여백 설정 */
+  background-color: #fff; /* 배경색 설정 */
+  border-radius: 8px; /* 둥근 테두리 설정 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 설정 */
+}
+
+/* h2 스타일 */
+h2 {
+  margin-top: 0;
+  text-align: center; /* 제목을 중앙으로 위치시킵니다. */
+  font-family: 'Roboto', sans-serif; /* Roboto 폰트를 적용합니다. */
+  font-weight: bold; /* 폰트를 흘림체로 설정합니다. */
+  font-size: 36px; /* 폰트 사이즈를 키웁니다. */
+}
+
+
+
+/* 입력 컨테이너 스타일 */
+.input-container {
+  max-width: 400px; /* 최대 너비 설정 */
+  margin: 0 auto; /* 가운데 정렬 */
+  border-radius: 8px; /* 둥근 테두리 설정 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 설정 */
+  padding: 20px; /* 안쪽 여백 설정 */
+}
+
+/* 입력 그룹 스타일 */
+.input-group {
+  margin-bottom: 10px; /* 아래쪽 여백 설정 */
+  overflow: hidden; /* 오버플로우 처리 */
+  display: flex; /* 플렉스박스로 설정 */
+  align-items: center; /* 수직 정렬 설정 */
+}
+
+/* 라벨 스타일 */
+.input-group label {
+  font-weight: bold; /* 글꼴 두껍게 설정 */
+  display: inline-block; /* 인라인-블록으로 설정 */
+  width: 100px; /* 너비 설정 */
+  margin-right: 10px; /* 오른쪽 여백 설정 */
+}
+
+/* 입력 요소 스타일 */
+.input-group input, .input-group select {
+  flex: 1; /* 플렉스 아이템의 크기 설정 */
+  padding: 8px; /* 안쪽 여백 설정 */
+  border: 1px solid #ccc; /* 테두리 설정 */
+  border-radius: 4px; /* 둥근 테두리 설정 */
+  box-sizing: border-box; /* 너비와 높이에 패딩 및 테두리 포함 */
+  text-align: right; /* 텍스트 정렬 설정 */
+  margin-right: 10px; /* 오른쪽 여백 설정 */
+}
+
+/* 단위 스타일 */
+.input-group .unit { 
+  display: inline-block; /* 인라인-블록으로 설정 */
+  width: 50px; /* 너비 설정 */
+}
+
+/* 버튼 스타일 */
+button { 
+  margin: 5px 0; /* 여백 설정 */
+  padding: 12px 0; /* 안쪽 여백 설정 */
+  border: 1px solid #ccc; /* 테두리 설정 */
+  border-radius: 4px; /* 둥근 테두리 설정 */
+  width: 100%; /* 너비 설정 */
+  box-sizing: border-box; /* 너비와 높이에 패딩 및 테두리 포함 */
+}
+
+/* 테이블 스타일 */
+table { 
+  width: 100%; /* 너비 설정 */
+  border-collapse: collapse; /* 테두리 겹치기 설정 */
+  margin-top: 20px; /* 위쪽 여백 설정 */
+  text-align: right; /* 텍스트 정렬 설정 */
+}
+
+/* 테이블 헤더, 셀 스타일 */
+th, td { 
+  border: 1px solid #ddd; /* 테두리 설정 */
+  padding: 8px; /* 안쪽 여백 설정 */
+  text-align: right; /* 텍스트 정렬 설정 */
+}
+
+/* 테이블 헤더 스타일 */
+th { 
+  background-color: #f2f2f2; /* 배경색 설정 */
+}
+
+/* 헤더 폰트 스타일 */
+.protest-revolution-regular {
+  font-family: "Protest Revolution", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+footer {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
